@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Features",
+    "subItems": [
+      {
+        "name": "Todo List",
+        "img": "/images/icon-todo.svg"
+      },
+      {
+        "name": "Calendar",
+        "img": "/images/icon-calendar.svg"
+      },
+      {
+        "name": "Reminders",
+        "img": "/images/icon-reminders.svg"
+      },
+      {
+        "name": "Planning",
+        "img": "/images/icon-planning.svg"
+      }
+    ]
+  },
+  {
+    "name": "Company",
+    "subItems": [
+      {
+        "name": "History"
+      },
+      {
+        "name": "Our Team"
+      },
+      {
+        "name": "Blog"
+      }
+    ]
+  },
+  {
+    "name": "Careers"
+  },
+  {
+    "name": "About"
+  }
+]

@@ -1,0 +1,259 @@
+@font-face {
+	font-family: 'Epilogue';
+	src: url(./assets/fonts/Epilogue-VariableFont_wght.ttf), local('Epilogue');
+	font-display: swap;
+}
+
+:root {
+	--clr-neutral-1: 0, 0%, 98%;
+	--clr-neutral-2: 0, 0%, 41%;
+	--clr-neutral-3: 0, 0%, 8%;
+}
+
+:root.dark {
+	--clr-neutral-1: 220, 15%, 15%;
+	--clr-neutral-2: 0, 0%, 59%;
+	--clr-neutral-3: 0, 0%, 92%;
+}
+
+#root {
+	min-height: 100vh;
+	background-color: hsl(var(--clr-neutral-1));
+	font-family: 'Epilogue', sans-serif;
+	font-weight: 500;
+	color: hsl(var(--clr-neutral-3));
+	line-height: 1;
+}
+
+header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.5rem 1rem;
+	width: 100vw;
+
+	& .logo {
+		justify-self: start;
+		align-self: end;
+
+		&.dark {
+			& img {
+				filter: invert(90%) hue-rotate(180deg);
+			}
+		}
+	}
+
+	& .nav {
+		& .mobile {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+
+			& .mobile-menu {
+				& .menu {
+					.list .sub-items {
+						padding: 2rem 1rem 1rem;
+					}
+
+					& .auth {
+						flex-direction: column;
+						gap: 1.5rem;
+					}
+				}
+			}
+		}
+
+		& .desk {
+			display: none;
+		}
+
+		& .item {
+			text-decoration: none;
+			color: hsl(var(--clr-neutral-2));
+		}
+	}
+}
+
+main {
+	display: grid;
+	gap: 3rem;
+	padding-bottom: 2rem;
+	max-width: 30rem;
+	margin: auto;
+}
+
+.text {
+	display: grid;
+	gap: 1.5rem;
+	padding: 0 1rem;
+	text-align: center;
+
+	& .title {
+		font-size: 2.15rem;
+	}
+
+	& .description {
+		color: hsl(var(--clr-neutral-2));
+		line-height: 1.55;
+	}
+
+	& .main-link {
+		justify-self: center;
+		text-decoration: none;
+		background-color: hsl(var(--clr-neutral-3));
+		color: hsl(var(--clr-neutral-1));
+		font-weight: bold;
+		padding: 0.85rem 1.4rem;
+		border: 0.1rem solid hsl(var(--clr-neutral-3));
+		border-radius: 1rem;
+	}
+
+	& .clients {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		margin: 1.5rem auto 0;
+		max-width: 20rem;
+
+		& .client {
+			display: grid;
+		}
+	}
+}
+
+/* Desktop */
+@media screen and (min-width: 55rem) {
+	#root {
+		display: grid;
+		grid-auto-rows: auto 1fr;
+		font-size: 1.125rem;
+	}
+
+	header {
+		grid-template-columns: auto 1fr;
+		gap: 4rem;
+		padding: 1.3rem 2.5rem 1.5rem;
+		max-width: 100rem;
+		margin: auto;
+
+		& .logo {
+			padding-bottom: 0.2rem;
+		}
+
+		& .nav {
+			& .mobile {
+				display: none;
+			}
+
+			& .desk {
+				display: grid;
+				grid-template-columns: 1fr auto auto;
+				align-items: center;
+				gap: 2rem;
+
+				& .nav-items {
+					display: flex;
+					align-items: center;
+					gap: 2.4rem;
+					position: relative;
+
+					& .sub-items {
+						position: absolute;
+						top: 2rem;
+						padding: 1.5rem;
+						background-color: hsla(var(--clr-neutral-1), 0.9);
+						backdrop-filter: blur(0.5rem);
+						border-radius: 0.5rem;
+						box-shadow: 0 0 1rem hsl(var(--clr-neutral-3), 0.15);
+					}
+				}
+
+				& .auth {
+					gap: 2.5rem;
+				}
+
+				& .item {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+
+	main {
+		grid-template-columns: 1.3fr 1fr;
+		gap: 5.25vw;
+		width: 82vw;
+		max-width: 80rem;
+		padding-bottom: 4.9rem;
+
+		& .hero {
+			order: 1;
+			padding-bottom: 0.5rem;
+
+			& img {
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+
+	.text {
+		align-content: end;
+		gap: 3rem;
+		text-align: left;
+		padding: 0 2.25rem;
+
+		& .title {
+			font-size: min(5.425vw, 5rem);
+			line-height: 1.04;
+
+			& span {
+				display: block;
+			}
+		}
+
+		& .description {
+			@media screen and (min-width: 85rem) {
+				padding-right: 12vh;
+			}
+		}
+
+		& .main-link {
+			justify-self: start;
+			margin-top: 0.21rem;
+			padding: 1.15rem 1.75rem 1rem;
+			font-size: 1.1rem;
+		}
+
+		& .clients {
+			gap: 2.5rem;
+			margin: 3.75rem 0 0.05rem;
+			max-width: none;
+		}
+	}
+}
+
+@media (hover: hover) {
+	header {
+		& .nav {
+			& .item {
+				&:hover,
+				&:focus-visible {
+					color: hsl(var(--clr-neutral-3));
+				}
+			}
+		}
+	}
+
+	.text {
+		& .main-link {
+			&:hover,
+			&:focus-visible {
+				background-color: var(--clr-neutral-1);
+				color: hsl(var(--clr-neutral-3));
+			}
+		}
+	}
+}

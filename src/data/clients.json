@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Databiz",
+    "img": "/images/client-databiz.svg"
+  },
+  {
+    "name": "Audiophile",
+    "img": "/images/client-audiophile.svg"
+  },
+  {
+    "name": "Meet",
+    "img": "/images/client-meet.svg"
+  },
+  {
+    "name": "Maker",
+    "img": "/images/client-maker.svg"
+  }
+]
